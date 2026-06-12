@@ -71,9 +71,9 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted"
       >
-        ARBYNEX builds AI chatbots and automation systems that reply to every
-        customer instantly, capture every lead automatically, and save you 30+
-        hours a month — without hiring anyone.
+        ARBYNEX builds AI chatbots, automation systems and modern websites that
+        reply to every customer instantly, capture every lead automatically,
+        and save you 30+ hours a month — without hiring anyone.
       </motion.p>
 
       <motion.div

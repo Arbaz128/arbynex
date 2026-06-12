@@ -7,11 +7,18 @@ import {
   Mail,
   Megaphone,
   Settings,
+  Globe,
 } from "lucide-react";
 import type { MouseEvent } from "react";
 import Reveal from "./Reveal";
 
 const SERVICES = [
+  {
+    icon: Globe,
+    title: "Websites & Web Apps",
+    desc: "Modern, lightning-fast websites and full web applications built with Next.js & React — the same stack used by OpenAI and Nike. Landing pages, SaaS platforms, e-commerce stores and dashboards.",
+    tag: "BUILT TO CONVERT →",
+  },
   {
     icon: Bot,
     title: "AI Chatbots",

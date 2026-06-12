@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | ARBYNEX",
   },
   description:
-    "ARBYNEX builds AI chatbots and business automation systems that reply to every customer instantly 24/7, capture every lead automatically, and save you 30+ hours a month.",
+    "ARBYNEX builds AI chatbots, business automation systems and modern websites — reply to every customer instantly 24/7, capture every lead automatically, and save 30+ hours a month.",
   keywords: [
     "AI automation agency",
     "AI chatbot for business",
@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     "Make.com expert",
     "business workflow automation",
     "AI customer support",
+    "web development agency",
+    "Next.js website development",
+    "SaaS development",
   ],
   authors: [{ name: "Arbaz", url: SITE_URL }],
   creator: "ARBYNEX",
@@ -78,6 +81,8 @@ const jsonLd = {
     "Business Workflow Automation",
     "Lead Capture Automation",
     "AI Customer Support",
+    "Web Development",
+    "SaaS Development",
   ],
   priceRange: "$150 - $1500",
 };
