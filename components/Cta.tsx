@@ -37,9 +37,13 @@ export default function Cta() {
               <MessageCircle size={20} /> WhatsApp Us Now
             </a>
             <a
-              href={`mailto:${EMAIL}?subject=${encodeURIComponent(
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}&su=${encodeURIComponent(
                 "Free Demo Request"
+              )}&body=${encodeURIComponent(
+                "Hi ARBYNEX,\n\nI'd like a free automation demo for my business.\n\nMy business: \nMy biggest time-waster: "
               )}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 rounded-xl border border-line px-8 py-3.5 font-display font-semibold text-white transition-all hover:-translate-y-1 hover:border-violet"
             >
               <Mail size={20} /> Send an Email
