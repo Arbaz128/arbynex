@@ -97,7 +97,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${grotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
