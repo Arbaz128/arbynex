@@ -89,10 +89,10 @@ export default function Hero() {
           Get Your Free Demo →
         </a>
         <a
-          href="#services"
+          href="/demo"
           className="rounded-xl border border-line px-8 py-3.5 font-display font-semibold text-white transition-all hover:-translate-y-1 hover:border-violet"
         >
-          See What We Build
+          Try the Live AI →
         </a>
       </motion.div>
 
