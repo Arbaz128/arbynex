@@ -37,8 +37,9 @@ export default function Founder() {
               I&apos;m a developer who got tired of watching businesses lose
               customers to slow replies and manual busywork. So I build the
               systems that fix it — chatbots, automations and websites that
-              actually move the needle. Every project comes through me directly,
-              so you talk to the person doing the work, not a sales rep.
+              actually move the needle. No account managers, no hand-offs, no
+              waiting on a team: you work directly with the person building your
+              system, so it ships faster and nothing gets lost in translation.
             </p>
             <div className="mt-6 flex items-center gap-2.5 text-sm text-white/90">
               <BadgeCheck className="text-cyan" size={20} />
