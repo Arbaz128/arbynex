@@ -1,7 +1,7 @@
 // Single source of truth for how leads reach ARBYNEX.
 // Used by the contact CTA, the lead form and the chat widget.
 
-export const WHATSAPP_NUMBER = "923004339095";
+export const WHATSAPP_NUMBER = "923196926996";
 export const EMAIL = "a4arbazchaudhary@gmail.com";
 
 export function buildWhatsAppUrl(message: string) {
