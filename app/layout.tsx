@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { FAQS, SERVICES } from "@/lib/seo-data";
+import { WHATSAPP_NUMBER, EMAIL } from "@/lib/contact";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -67,26 +69,75 @@ export const metadata: Metadata = {
   },
 };
 
+// JSON-LD @graph — "triple stacking" (Organization + Person + WebSite +
+// FAQPage) is a strong signal for both Google rich results and AI/generative
+// engines (ChatGPT, Perplexity, AI Overviews) deciding what to cite.
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "ARBYNEX",
-  url: SITE_URL,
-  description:
-    "AI automation agency building chatbots, lead capture systems and business workflow automation for clients worldwide.",
-  founder: { "@type": "Person", name: "Muhammad Arbaz" },
-  logo: `${SITE_URL}/icon`,
-  image: `${SITE_URL}/opengraph-image`,
-  areaServed: ["US", "GB", "AE", "SA", "EU", "PK"],
-  serviceType: [
-    "AI Chatbot Development",
-    "Business Workflow Automation",
-    "Lead Capture Automation",
-    "AI Customer Support",
-    "Web Development",
-    "SaaS Development",
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": `${SITE_URL}/#organization`,
+      name: "ARBYNEX",
+      alternateName: "ARBYNEX AI Automation Agency",
+      url: SITE_URL,
+      logo: `${SITE_URL}/icon`,
+      image: `${SITE_URL}/opengraph-image`,
+      description:
+        "ARBYNEX is an AI automation agency that builds AI chatbots, lead-capture systems, booking automation and modern websites for businesses worldwide — with a free working demo before you pay.",
+      slogan: "Your business on autopilot.",
+      foundingDate: "2026",
+      founder: { "@id": `${SITE_URL}/#founder` },
+      areaServed: ["US", "GB", "AE", "SA", "EU", "PK", "Worldwide"],
+      priceRange: "$150–$1500",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: `+${WHATSAPP_NUMBER}`,
+        email: EMAIL,
+        availableLanguage: ["English", "Urdu"],
+      },
+      makesOffer: SERVICES.map((s) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: s.name,
+          description: s.summary,
+          provider: { "@id": `${SITE_URL}/#organization` },
+        },
+      })),
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "ARBYNEX",
+      description:
+        "AI chatbots, automation systems and modern websites — a free working demo for your business before you pay.",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      inLanguage: "en",
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#founder`,
+      name: "Muhammad Arbaz",
+      jobTitle: "Founder & Developer",
+      description:
+        "Developer and founder of ARBYNEX who personally builds every AI chatbot, automation system and website for clients.",
+      worksFor: { "@id": `${SITE_URL}/#organization` },
+      url: SITE_URL,
+      image: `${SITE_URL}/arbaz-photo.jpeg`,
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      mainEntity: FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
   ],
-  priceRange: "$150 - $1500",
 };
 
 export default function RootLayout({

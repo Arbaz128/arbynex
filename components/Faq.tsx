@@ -4,29 +4,7 @@ import { useState } from "react";
 import { Plus } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Reveal from "./Reveal";
-
-const FAQS = [
-  {
-    q: "Do I really get a demo before paying?",
-    a: "Yes — 100%. We build a working demo for your business first. You only pay when you've seen it working and want the full system. Zero risk for you.",
-  },
-  {
-    q: "How much does it cost?",
-    a: "Simple automations start from $150. AI chatbots and complete systems range from $300–$1,000+ depending on what you need. Monthly support plans are also available. Every quote is fixed before we start — no surprises.",
-  },
-  {
-    q: "Do I need any technical knowledge?",
-    a: "None at all. We build everything, test it with you, and hand it over working. If anything ever breaks, we fix it.",
-  },
-  {
-    q: "How long does it take?",
-    a: "Most systems go live within 3–7 days of approval. Simple automations can be done in 24–48 hours.",
-  },
-  {
-    q: "What if it stops working later?",
-    a: "Every project includes free fixes for the first weeks after launch, and our monthly support plans keep everything monitored, maintained and improving over time.",
-  },
-];
+import { FAQS } from "@/lib/seo-data";
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);

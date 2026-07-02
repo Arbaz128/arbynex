@@ -1,0 +1,37 @@
+# ARBYNEX
+
+> ARBYNEX is an AI automation agency that builds AI chatbots, lead-capture systems, booking automation, email/content workflows and modern websites for small and medium businesses worldwide. Every client gets a free, working demo built for their own business before paying anything.
+
+Key facts:
+- What it is: an AI automation and web-development agency ("your business on autopilot").
+- Founder & developer: Muhammad Arbaz — he personally builds every project, so clients work directly with the developer (no account managers or hand-offs).
+- Risk-free model: a working demo is built for your business first; you pay only after you have seen it working and want the full system.
+- Pricing: simple automations start from $150; AI chatbots and complete systems range from $300 to $1,000+; monthly support/maintenance plans are available. Every quote is fixed before work starts.
+- Delivery time: most systems go live within 3–7 days of approval; simple automations in 24–48 hours.
+- Tech stack: Next.js and React for websites/apps; GPT and Claude for chatbots.
+- Serves clients worldwide, including the US, UK, UAE, Saudi Arabia, the EU and Pakistan. Languages supported: English and Urdu.
+- Contact: WhatsApp +92 319 6926996; email a4arbazchaudhary@gmail.com.
+
+## Services
+- [Websites & Web Apps](https://arbynex.com/#services): fast Next.js/React websites, SaaS platforms, e-commerce stores and dashboards built to convert.
+- [AI Chatbots](https://arbynex.com/#services): WhatsApp, Instagram and website bots powered by GPT/Claude that answer customers instantly in any language, 24/7, and hand over to a human when it matters.
+- [Lead Capture & Follow-up](https://arbynex.com/#services): every form, DM and ad inquiry is saved automatically, the owner is notified instantly, and the lead receives an instant follow-up.
+- [Booking & Reminders](https://arbynex.com/#services): customers self-book into your calendar; automatic WhatsApp/SMS reminders cut no-shows — ideal for clinics, med spas, salons and gyms.
+- [Email Automation](https://arbynex.com/#services): welcome sequences, follow-ups and AI-drafted replies that turn the inbox into a sales machine.
+- [Content Pipelines](https://arbynex.com/#services): one idea in — posts written, scheduled and published across Instagram, Facebook and LinkedIn automatically.
+- [Custom Workflows](https://arbynex.com/#services): data entry, invoices, order confirmations and reports — any repetitive weekly task, automated.
+
+## Try it
+- [Live AI chatbot demo](https://arbynex.com/demo): chat with a real ARBYNEX-built AI assistant exactly as a customer would.
+- [Book a free demo](https://arbynex.com/#contact): request a free working automation demo for your own business (limited slots per week).
+
+## FAQ
+- **Do I really get a demo before paying?** Yes — a working demo is built for your business first; you only pay once you have seen it working and want the full system. Zero risk.
+- **How much does it cost?** Simple automations from $150; AI chatbots and complete systems $300–$1,000+; monthly support plans available. Every quote is fixed up front.
+- **Do I need technical knowledge?** None. ARBYNEX builds everything, tests it with you, and hands it over working, then fixes anything that breaks.
+- **How long does it take?** Most systems are live within 3–7 days of approval; simple automations within 24–48 hours.
+- **What if it stops working later?** Every project includes free fixes for the first weeks after launch, and monthly support plans keep everything monitored and maintained.
+
+## Pages
+- [Home](https://arbynex.com/): overview of services, work, process and founder.
+- [Live demo](https://arbynex.com/demo): interactive AI chatbot demo.
