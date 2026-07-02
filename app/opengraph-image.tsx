@@ -109,7 +109,7 @@ export default function Image() {
             )}
           </div>
           <div style={{ display: "flex", fontSize: 24, color: "#9aa0b8" }}>
-            arbynex.vercel.app
+            arbynex.com
           </div>
         </div>
       </div>

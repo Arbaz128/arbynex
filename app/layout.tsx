@@ -12,7 +12,7 @@ const grotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://arbynex.vercel.app";
+const SITE_URL = "https://arbynex.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -74,7 +74,9 @@ const jsonLd = {
   url: SITE_URL,
   description:
     "AI automation agency building chatbots, lead capture systems and business workflow automation for clients worldwide.",
-  founder: { "@type": "Person", name: "Arbaz" },
+  founder: { "@type": "Person", name: "Muhammad Arbaz" },
+  logo: `${SITE_URL}/icon`,
+  image: `${SITE_URL}/opengraph-image`,
   areaServed: ["US", "GB", "AE", "SA", "EU", "PK"],
   serviceType: [
     "AI Chatbot Development",

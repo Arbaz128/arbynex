@@ -6,7 +6,7 @@ import { Send, Sparkles } from "lucide-react";
 /**
  * Live AI chatbot demo for prospects (a med spa: "Glow Med Spa").
  * Talks to /api/chat (Groq, free). Share this page's URL with leads:
- * arbynex.vercel.app/demo — let them chat with it like a real customer.
+ * arbynex.com/demo — let them chat with it like a real customer.
  *
  * When a client signs up, swap the system prompt in app/api/chat/route.ts
  * for their real business details, or build a per-client version.
