@@ -18,7 +18,8 @@ export default function Faq() {
       </Reveal>
       <Reveal delay={0.1}>
         <h2 className="mt-5 font-display text-4xl font-bold tracking-tight md:text-5xl">
-          Questions? <span className="grad-text">Answered.</span>
+          Questions?{" "}
+          <span className="grad-text">Answered.</span>
         </h2>
       </Reveal>
 

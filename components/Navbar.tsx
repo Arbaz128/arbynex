@@ -4,11 +4,12 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const LINKS = [
-  { href: "#services", label: "Services" },
+  { href: "#services", label: "What We Build" },
+  { href: "#ai", label: "AI & Automation" },
+  { href: "#tech", label: "Technology" },
   { href: "#work", label: "Our Work" },
-  { href: "#proof", label: "Why Us" },
-  { href: "#process", label: "How It Works" },
-  { href: "#usecases", label: "Use Cases" },
+  { href: "#industries", label: "Industries" },
+  { href: "#process", label: "Process" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -39,7 +40,7 @@ export default function Navbar() {
             href="#contact"
             className="grad-bg rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_30px_rgba(139,92,246,.35)] transition-transform hover:-translate-y-0.5"
           >
-            Get Free Demo
+            Start a Project
           </a>
         </div>
 
@@ -69,7 +70,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             className="grad-bg rounded-xl px-5 py-3 text-center text-sm font-semibold text-white"
           >
-            Get Free Demo
+            Start a Project
           </a>
         </div>
       )}

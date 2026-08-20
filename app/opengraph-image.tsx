@@ -1,11 +1,12 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "ARBYNEX — AI Automation Agency. Your business on autopilot. Free working demo before you pay.";
+  "ARBYNEX — AI Automation Agency & Software Development Company. AI chatbots, business automation, custom software and SaaS platforms.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const GRADIENT = "linear-gradient(100deg,#22d3ee 0%,#8b5cf6 50%,#ec4899 100%)";
+const GRADIENT =
+  "linear-gradient(100deg,#22d3ee 0%,#8b5cf6 50%,#ec4899 100%)";
 
 export default function Image() {
   return new ImageResponse(
@@ -24,7 +25,6 @@ export default function Image() {
           fontFamily: "sans-serif",
         }}
       >
-        {/* Wordmark */}
         <div style={{ display: "flex", alignItems: "center" }}>
           <div
             style={{
@@ -41,11 +41,10 @@ export default function Image() {
           </div>
         </div>
 
-        {/* Headline */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              fontSize: 78,
+              fontSize: 72,
               fontWeight: 800,
               color: "#eef0ff",
               lineHeight: 1.05,
@@ -54,7 +53,14 @@ export default function Image() {
           >
             Your business,
           </div>
-          <div style={{ display: "flex", fontSize: 78, fontWeight: 800, letterSpacing: -2 }}>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 72,
+              fontWeight: 800,
+              letterSpacing: -2,
+            }}
+          >
             <span style={{ color: "#eef0ff" }}>running on&nbsp;</span>
             <span
               style={{
@@ -70,18 +76,18 @@ export default function Image() {
           <div
             style={{
               marginTop: 26,
-              fontSize: 30,
+              fontSize: 28,
               color: "#9aa0b8",
               maxWidth: 880,
               lineHeight: 1.35,
             }}
           >
-            AI chatbots, automation systems & modern websites — a free working
-            demo for your business before you pay a dollar.
+            AI Automation Agency & Software Company — AI chatbots, business
+            automation, custom software and SaaS platforms. Free working demo
+            before you pay.
           </div>
         </div>
 
-        {/* Footer row */}
         <div
           style={{
             display: "flex",
@@ -89,24 +95,27 @@ export default function Image() {
             justifyContent: "space-between",
           }}
         >
-          <div style={{ display: "flex", gap: 16 }}>
-            {["24/7 instant replies", "30+ hrs saved / mo", "100% leads captured"].map(
-              (t) => (
-                <div
-                  key={t}
-                  style={{
-                    display: "flex",
-                    fontSize: 22,
-                    color: "#c9cde3",
-                    border: "1px solid rgba(255,255,255,0.12)",
-                    borderRadius: 999,
-                    padding: "10px 20px",
-                  }}
-                >
-                  {t}
-                </div>
-              )
-            )}
+          <div style={{ display: "flex", gap: 14 }}>
+            {[
+              "AI Chatbots",
+              "Business Automation",
+              "Custom Software",
+              "SaaS Platforms",
+            ].map((t) => (
+              <div
+                key={t}
+                style={{
+                  display: "flex",
+                  fontSize: 20,
+                  color: "#c9cde3",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  borderRadius: 999,
+                  padding: "10px 20px",
+                }}
+              >
+                {t}
+              </div>
+            ))}
           </div>
           <div style={{ display: "flex", fontSize: 24, color: "#9aa0b8" }}>
             arbynex.com

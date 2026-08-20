@@ -1,12 +1,16 @@
 const TOOLS = [
-  "MAKE.COM",
-  "OPENAI",
-  "CLAUDE",
-  "WHATSAPP",
-  "INSTAGRAM",
-  "GOOGLE SHEETS",
-  "SHOPIFY",
-  "GMAIL",
+  "REACT",
+  "NEXT.JS",
+  "TYPESCRIPT",
+  "NODE.JS",
+  "PYTHON",
+  "POSTGRESQL",
+  "DOCKER",
+  "AWS",
+  "MONGODB",
+  "NESTJS",
+  "REDIS",
+  "TAILWIND CSS",
 ];
 
 export default function Marquee() {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { FAQS, SERVICES } from "@/lib/seo-data";
 import { WHATSAPP_NUMBER, EMAIL } from "@/lib/contact";
@@ -9,8 +9,8 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const grotesk = Space_Grotesk({
-  variable: "--font-grotesk",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
@@ -19,40 +19,45 @@ const SITE_URL = "https://arbynex.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "ARBYNEX — AI Automation Agency | Your Business on Autopilot",
+    default:
+      "ARBYNEX — AI Automation Agency & Software Development Company | Custom Software, AI Chatbots, Automation",
     template: "%s | ARBYNEX",
   },
   description:
-    "ARBYNEX builds AI chatbots, business automation systems and modern websites — reply to every customer instantly 24/7, capture every lead automatically, and save 30+ hours a month.",
+    "ARBYNEX is an AI automation agency and full-service software company. We build AI chatbots, business automation systems, custom software, SaaS platforms and enterprise solutions for modern businesses worldwide.",
   keywords: [
     "AI automation agency",
     "AI chatbot for business",
     "WhatsApp chatbot",
     "Instagram automation",
     "lead capture automation",
-    "Make.com expert",
     "business workflow automation",
     "AI customer support",
-    "web development agency",
-    "Next.js website development",
-    "SaaS development",
+    "custom software development",
+    "SaaS product development",
+    "web application development",
+    "mobile app development",
+    "enterprise software development",
+    "cloud and devops",
+    "digital transformation",
+    "software house",
   ],
-  authors: [{ name: "Arbaz", url: SITE_URL }],
+  authors: [{ name: "ARBYNEX", url: SITE_URL }],
   creator: "ARBYNEX",
   openGraph: {
     type: "website",
     url: SITE_URL,
     siteName: "ARBYNEX",
-    title: "ARBYNEX — AI Automation Agency | Your Business on Autopilot",
+    title: "ARBYNEX — AI Automation Agency & Software Development Company",
     description:
-      "AI chatbots & automation systems that capture every lead, reply instantly 24/7, and save you 30+ hours a month. Free working demo before you pay.",
+      "AI chatbots, business automation, custom software, SaaS platforms and enterprise solutions — built by ARBYNEX. Free working demo before you pay.",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ARBYNEX — AI Automation Agency",
+    title: "ARBYNEX — AI Automation Agency & Software Company",
     description:
-      "AI chatbots & automation that never miss a lead. Free demo before you pay.",
+      "AI chatbots, automation systems, custom software and SaaS platforms — built by ARBYNEX.",
   },
   robots: {
     index: true,
@@ -69,9 +74,6 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD @graph — "triple stacking" (Organization + Person + WebSite +
-// FAQPage) is a strong signal for both Google rich results and AI/generative
-// engines (ChatGPT, Perplexity, AI Overviews) deciding what to cite.
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -84,12 +86,12 @@ const jsonLd = {
       logo: `${SITE_URL}/icon`,
       image: `${SITE_URL}/opengraph-image`,
       description:
-        "ARBYNEX is an AI automation agency that builds AI chatbots, lead-capture systems, booking automation and modern websites for businesses worldwide — with a free working demo before you pay.",
-      slogan: "Your business on autopilot.",
+        "ARBYNEX is an AI automation agency and full-service software company that builds AI chatbots, business automation systems, custom software, SaaS platforms and enterprise solutions for modern businesses worldwide.",
+      slogan: "Your Business on Autopilot.",
       foundingDate: "2026",
       founder: { "@id": `${SITE_URL}/#founder` },
       areaServed: ["US", "GB", "AE", "SA", "EU", "PK", "Worldwide"],
-      priceRange: "$150–$1500",
+      priceRange: "$500–$20000+",
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "sales",
@@ -113,7 +115,7 @@ const jsonLd = {
       url: SITE_URL,
       name: "ARBYNEX",
       description:
-        "AI chatbots, automation systems and modern websites — a free working demo for your business before you pay.",
+        "AI chatbots, business automation, custom software, SaaS platforms and enterprise solutions — ARBYNEX.",
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "en",
     },
@@ -123,7 +125,7 @@ const jsonLd = {
       name: "Muhammad Arbaz",
       jobTitle: "Founder & Developer",
       description:
-        "Developer and founder of ARBYNEX who personally builds every AI chatbot, automation system and website for clients.",
+        "Founder and developer of ARBYNEX, an AI automation agency and software company building AI chatbots, automation systems and custom software for businesses worldwide.",
       worksFor: { "@id": `${SITE_URL}/#organization` },
       url: SITE_URL,
       image: `${SITE_URL}/arbaz-photo.jpeg`,
@@ -148,9 +150,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${grotesk.variable} h-full antialiased`}
+      className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
+      <body
+        className="min-h-full flex flex-col font-sans"
+        suppressHydrationWarning
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

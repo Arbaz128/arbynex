@@ -4,11 +4,6 @@ import { useState } from "react";
 import { MessageCircle, Mail } from "lucide-react";
 import { buildWhatsAppUrl, buildEmailUrl } from "@/lib/contact";
 
-/**
- * No backend, no monthly cost. The form gathers everything we'd ask on a
- * first call, then opens a pre-filled WhatsApp (or email) message so the lead
- * lands in a real inbox the instant they submit.
- */
 export default function LeadForm() {
   const [name, setName] = useState("");
   const [business, setBusiness] = useState("");
@@ -17,7 +12,7 @@ export default function LeadForm() {
 
   const ready = name.trim() && business.trim() && problem.trim();
 
-  const message = `Hi ARBYNEX! I'd like my free automation demo.\n\nName: ${name}\nBusiness: ${business}\nBiggest time-waster: ${problem}`;
+  const message = `Hi ARBYNEX! I'd like to discuss a project.\n\nName: ${name}\nBusiness/Product: ${business}\nProblem it solves: ${problem}`;
 
   function open(url: string) {
     if (!ready) {
@@ -33,10 +28,11 @@ export default function LeadForm() {
   return (
     <div className="mx-auto mt-12 max-w-lg rounded-3xl border border-line bg-card p-6 text-left md:p-8">
       <p className="font-display text-lg font-semibold text-white">
-        Or tell us here — takes 30 seconds
+        Or tell us about your project — takes 30 seconds
       </p>
       <p className="mt-1.5 text-sm text-muted">
-        Fill this in and we&apos;ll reach out with your free demo. No spam, no obligation.
+        Fill this in and we&apos;ll reach out with a clear scope and quote. No
+        spam, no obligation.
       </p>
 
       <div className="mt-6 space-y-3">
@@ -48,20 +44,22 @@ export default function LeadForm() {
         />
         <input
           className={field}
-          placeholder="What kind of business? (e.g. salon, online store)"
+          placeholder="What are you building? (e.g. SaaS, mobile app, business system)"
           value={business}
           onChange={(e) => setBusiness(e.target.value)}
         />
         <textarea
           className={`${field} min-h-[90px] resize-y`}
-          placeholder="What's the #1 task eating your time?"
+          placeholder="What problem does this solve?"
           value={problem}
           onChange={(e) => setProblem(e.target.value)}
         />
       </div>
 
       {touched && !ready && (
-        <p className="mt-3 text-xs text-pink">Please fill in all three fields first.</p>
+        <p className="mt-3 text-xs text-pink">
+          Please fill in all three fields first.
+        </p>
       )}
 
       <div className="mt-5 flex flex-wrap gap-3">
@@ -72,7 +70,7 @@ export default function LeadForm() {
           <MessageCircle size={18} /> Send on WhatsApp
         </button>
         <button
-          onClick={() => open(buildEmailUrl("Free Demo Request", message))}
+          onClick={() => open(buildEmailUrl("Project Inquiry", message))}
           className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-line px-5 py-3 font-display text-sm font-semibold text-white transition-colors hover:border-violet"
         >
           <Mail size={18} /> Send by Email

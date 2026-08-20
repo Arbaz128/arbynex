@@ -36,9 +36,21 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 }
 
 const STATS = [
-  { target: 24, suffix: "/7", label: "instant replies — never miss a customer" },
-  { target: 30, suffix: "+", label: "hours saved per month on manual work" },
-  { target: 100, suffix: "%", label: "of leads captured & followed up" },
+  {
+    target: 6,
+    suffix: "+",
+    label: "product categories we engineer",
+  },
+  {
+    target: 30,
+    suffix: "+",
+    label: "technologies in our stack",
+  },
+  {
+    target: 100,
+    suffix: "%",
+    label: "code ownership — it's your product",
+  },
 ];
 
 export default function Hero() {
@@ -51,7 +63,7 @@ export default function Hero() {
         className="mb-9 inline-flex items-center gap-2.5 rounded-full border border-line bg-white/5 px-5 py-2 text-sm text-muted"
       >
         <span className="pulse-dot h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_#34d399]" />
-        Accepting new clients — 2 free demo slots this week
+        AI Automation Agency & Software Development Company
       </motion.div>
 
       <motion.h1
@@ -60,9 +72,10 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.15 }}
         className="max-w-5xl font-display text-5xl font-bold leading-[1.06] tracking-tight md:text-7xl"
       >
-        Your business, running on <span className="grad-text">autopilot.</span>
+        We Build Technology
         <br />
-        While you sleep.
+        That Moves{" "}
+        <span className="grad-text">Businesses Forward.</span>
       </motion.h1>
 
       <motion.p
@@ -71,9 +84,10 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted"
       >
-        ARBYNEX builds AI chatbots, automation systems and modern websites that
-        reply to every customer instantly, capture every lead automatically,
-        and save you 30+ hours a month — without hiring anyone.
+        From AI chatbots and business automation to custom software, SaaS
+        platforms and enterprise systems — ARBYNEX helps businesses reply to
+        every customer instantly, automate operations and turn ideas into
+        reliable, scalable technology.
       </motion.p>
 
       <motion.div
@@ -86,13 +100,13 @@ export default function Hero() {
           href="#contact"
           className="grad-bg rounded-xl px-8 py-3.5 font-display font-semibold text-white shadow-[0_8px_30px_rgba(139,92,246,.35)] transition-all hover:-translate-y-1 hover:shadow-[0_14px_44px_rgba(139,92,246,.5)]"
         >
-          Get Your Free Demo →
+          Start Your Project →
         </a>
         <a
-          href="/demo"
+          href="#work"
           className="rounded-xl border border-line px-8 py-3.5 font-display font-semibold text-white transition-all hover:-translate-y-1 hover:border-violet"
         >
-          Try the Live AI →
+          View Our Work →
         </a>
       </motion.div>
 

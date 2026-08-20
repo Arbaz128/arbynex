@@ -1,50 +1,51 @@
 import Reveal from "./Reveal";
-
-const STEPS = [
-  {
-    title: "Free Audit Call",
-    desc: "A quick 15-minute chat. You tell us how your business runs — we spot exactly where you're losing time and leads.",
-  },
-  {
-    title: "Free Working Demo",
-    desc: "We build a live demo for YOUR business before you pay anything. You see it working with your own eyes first.",
-  },
-  {
-    title: "Build & Launch",
-    desc: "You approve, we build the full system, test it with you live, and launch. Most projects go live within 3–7 days.",
-  },
-  {
-    title: "Support & Scale",
-    desc: "We monitor, maintain and improve your system every month — so it keeps working while your business grows.",
-  },
-];
+import { PROCESS_STEPS } from "@/lib/seo-data";
 
 export default function Process() {
   return (
     <section id="process" className="relative z-10 mx-auto max-w-7xl px-6 py-28">
       <Reveal>
         <span className="inline-block rounded-full border border-cyan/30 bg-cyan/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-cyan">
-          How It Works
+          How We Work
         </span>
       </Reveal>
       <Reveal delay={0.1}>
-        <h2 className="mt-5 max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight md:text-5xl">
-          From first call to live system in{" "}
-          <span className="grad-text">days, not months.</span>
+        <h2 className="mt-5 max-w-4xl font-display text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+          From business problem to{" "}
+          <span className="grad-text">working product.</span>
         </h2>
       </Reveal>
+      <Reveal delay={0.2}>
+        <p className="mt-5 max-w-2xl leading-relaxed text-muted">
+          Great software starts with understanding the problem. Our process is
+          designed to keep communication clear, development focused and delivery
+          predictable.
+        </p>
+      </Reveal>
 
-      <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {STEPS.map((s, i) => (
-          <Reveal key={s.title} delay={i * 0.1}>
-            <div className="h-full rounded-3xl border border-line bg-card p-8">
-              <span className="grad-text font-display text-5xl font-bold opacity-85">
-                0{i + 1}
+      <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {PROCESS_STEPS.map((step, i) => (
+          <Reveal key={step.title} delay={i * 0.07}>
+            <div
+              className={`h-full rounded-3xl border bg-card p-7 transition-all ${
+                i < 4 ? "border-line" : "border-violet/20"
+              } ${i >= 4 ? "lg:col-span-1" : ""}`}
+            >
+              <span className="grad-text font-display text-4xl font-bold opacity-85">
+                {step.number}
               </span>
-              <h3 className="mt-4 font-display text-lg font-semibold">
-                {s.title}
+              <h3 className="mt-3 font-display text-lg font-bold">
+                {step.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{s.desc}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {step.description}
+              </p>
+              <div className="mt-4 rounded-lg border border-line bg-white/[0.02] px-3 py-2">
+                <p className="text-xs text-muted">
+                  <span className="font-semibold text-white/60">Output: </span>
+                  {step.output}
+                </p>
+              </div>
             </div>
           </Reveal>
         ))}

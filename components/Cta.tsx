@@ -1,4 +1,4 @@
-import { MessageCircle, Mail } from "lucide-react";
+import { MessageCircle, Mail, ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
 import LeadForm from "./LeadForm";
 import { buildWhatsAppUrl, buildEmailUrl } from "@/lib/contact";
@@ -17,17 +17,34 @@ export default function Cta() {
             }}
           />
           <h2 className="relative font-display text-4xl font-bold tracking-tight md:text-5xl">
-            Get your <span className="grad-text">free demo</span> this week.
+            Let&apos;s build{" "}
+            <span className="grad-text">what&apos;s next.</span>
           </h2>
           <p className="relative mx-auto mt-6 max-w-xl leading-relaxed text-muted">
-            Tell us what eats your time — we&apos;ll show you a working
-            automation for your business before you spend a single dollar. Only
-            2 free demo slots per week.
+            Whether you&apos;re launching a startup, transforming an existing
+            business or building the next generation of your product — ARBYNEX
+            can help you turn the idea into working technology.
           </p>
+
+          <div className="relative mx-auto mt-8 max-w-lg">
+            <p className="mb-4 text-sm text-muted">Tell us about your project:</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <span className="rounded-xl border border-line bg-white/[0.03] px-4 py-2 text-sm text-white/70">
+                What are you building?
+              </span>
+              <span className="rounded-xl border border-line bg-white/[0.03] px-4 py-2 text-sm text-white/70">
+                What problem are you solving?
+              </span>
+              <span className="rounded-xl border border-line bg-white/[0.03] px-4 py-2 text-sm text-white/70">
+                What does success look like?
+              </span>
+            </div>
+          </div>
+
           <div className="relative mt-10 flex flex-wrap justify-center gap-4">
             <a
               href={buildWhatsAppUrl(
-                "Hi ARBYNEX! I want a free automation demo for my business."
+                "Hi ARBYNEX! I'd like to discuss a software development project."
               )}
               target="_blank"
               rel="noopener noreferrer"
@@ -37,8 +54,8 @@ export default function Cta() {
             </a>
             <a
               href={buildEmailUrl(
-                "Free Demo Request",
-                "Hi ARBYNEX,\n\nI'd like a free automation demo for my business.\n\nMy business: \nMy biggest time-waster: "
+                "Project Inquiry",
+                "Hi ARBYNEX,\n\nI'd like to discuss a software development project.\n\nWhat I'm building: \nProblem it solves: \nSuccess looks like: "
               )}
               target="_blank"
               rel="noopener noreferrer"
