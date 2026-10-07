@@ -1,4 +1,4 @@
-import { MessageCircle, Mail, ArrowRight } from "lucide-react";
+import { MessageCircle, Mail } from "lucide-react";
 import Reveal from "./Reveal";
 import LeadForm from "./LeadForm";
 import { buildWhatsAppUrl, buildEmailUrl } from "@/lib/contact";

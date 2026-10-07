@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { Send, Sparkles } from "lucide-react";
 
 /**
@@ -170,9 +171,9 @@ export default function DemoPage() {
       {/* Footer */}
       <p className="mt-6 text-center text-xs text-muted">
         Demo built by{" "}
-        <a href="/" className="text-cyan hover:underline">
+        <Link href="/" className="text-cyan hover:underline">
           ARBYNEX
-        </a>{" "}
+        </Link>{" "}
         — AI assistants for clinics, salons & med spas.
       </p>
     </main>
