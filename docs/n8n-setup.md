@@ -109,3 +109,42 @@ workflow is active.
    ```
 
 3. Log in to `arbynex.com/admin`, run **Lead Sourcing**, then open **Leads**.
+
+---
+
+## 4. Contact form webhook (inbound leads)
+
+The public contact form on the home page posts to `/api/contact`, which
+forwards the submission to its own n8n webhook. Set the full URL in the env
+var `N8N_CONTACT_WEBHOOK_URL` (auth: same `x-n8n-token` Header Auth).
+
+**Expected payload:**
+
+```json
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "phone": "+1 555 0100",
+  "message": "I need a booking system for my clinic.",
+  "source": "website-contact-form",
+  "submittedAt": "2026-10-07T12:34:56.000Z"
+}
+```
+
+`phone` may be empty; `source` and `submittedAt` (ISO timestamp) are added by
+the server.
+
+**Suggested flow:**
+
+```
+[Webhook (POST, Header Auth)] → [Google Sheets: Append row] → [Email / Telegram (optional)]
+```
+
+- **Webhook node** — HTTP Method `POST`, Path `contact`, Authentication
+  **Header Auth** (`x-n8n-token`, same token).
+- **Google Sheets node** — Operation **Append Row** into a **new tab/sheet
+  named `Inbound`** (columns: `name`, `email`, `phone`, `message`, `source`,
+  `submittedAt`). This keeps inbound contacts separate from the scraped
+  leads sheet used by the dashboard.
+- **Optional** — an Email Send or Telegram node after the sheet append to get
+  notified about new inquiries.

@@ -43,6 +43,7 @@ Environment variables (documented in `.env.example`):
 | `SESSION_SECRET` | Signs the admin session JWT (`openssl rand -base64 32`) |
 | `N8N_BASE_URL` | Base URL of the n8n instance (Render) |
 | `N8N_WEBHOOK_TOKEN` | Shared secret sent as `x-n8n-token` to every webhook |
+| `N8N_CONTACT_WEBHOOK_URL` | Full webhook URL for the public contact form |
 
 ## Scripts
 

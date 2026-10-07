@@ -8,6 +8,7 @@ import "server-only";
  *   trigger-outreach   — send personalized cold emails to "pending" leads
  *   trigger-followup   — follow up with leads still "sent" after 3 days
  *   leads              — read all rows from the Google Sheet as JSON
+ *   contact            — public contact-form submissions (N8N_CONTACT_WEBHOOK_URL)
  *
  * Every call sends `x-n8n-token` (N8N_WEBHOOK_TOKEN) which each n8n webhook
  * node must be configured to check (Header Auth — see docs/n8n-setup.md).
@@ -28,6 +29,7 @@ export const LEADS_PATH = "/webhook/leads";
 
 const TRIGGER_TIMEOUT_MS = 55_000;
 const LEADS_TIMEOUT_MS = 30_000;
+const CONTACT_TIMEOUT_MS = 15_000;
 
 function baseUrl(): string {
   const base = process.env.N8N_BASE_URL;
@@ -78,6 +80,48 @@ export async function triggerWorkflow(
 }
 
 export type RawLead = Record<string, string | number | null | undefined>;
+
+export type ContactPayload = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+  source: string;
+  submittedAt: string;
+};
+
+/**
+ * Forward a public contact-form submission to the n8n "contact" webhook.
+ * Uses the same x-n8n-token auth as every other n8n call. The webhook URL
+ * lives in N8N_CONTACT_WEBHOOK_URL (full URL, since the path is chosen when
+ * the webhook node is created).
+ */
+export async function submitContact(
+  payload: ContactPayload,
+): Promise<TriggerResult> {
+  const url = process.env.N8N_CONTACT_WEBHOOK_URL;
+  if (!url) {
+    return { ok: false, status: null, message: "N8N_CONTACT_WEBHOOK_URL is not set." };
+  }
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: authHeaders(),
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(CONTACT_TIMEOUT_MS),
+    });
+    return res.ok
+      ? { ok: true, status: res.status }
+      : { ok: false, status: res.status, message: `n8n returned ${res.status}` };
+  } catch (err) {
+    return {
+      ok: false,
+      status: null,
+      message:
+        err instanceof Error ? err.message : "Could not reach automation server.",
+    };
+  }
+}
 
 /**
  * Fetch all leads from the Google Sheet via the "leads" n8n webhook.
